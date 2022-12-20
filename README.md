@@ -2,9 +2,9 @@
 
 ## Demo
 
-- [BasicCannon](https://code4fukui.github.io/canvas-confetti-es/demo/BasecCannon.html)
-- [Fireworks](https://code4fukui.github.io/canvas-confetti-es/demo/Fireworks.html)
-- [SchoolPride](https://code4fukui.github.io/canvas-confetti-es/demo/SchoolPride.html)
+- [BasicCannon](https://code4fukui.github.io/confetti-es/demo/BasecCannon.html)
+- [Fireworks](https://code4fukui.github.io/confetti-es/demo/Fireworks.html)
+- [SchoolPride](https://code4fukui.github.io/confetti-es/demo/SchoolPride.html)
 
 ## Usage
 
