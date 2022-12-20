@@ -5,6 +5,7 @@
 - [BasicCannon](https://code4fukui.github.io/confetti-es/demo/BasecCannon.html)
 - [Fireworks](https://code4fukui.github.io/confetti-es/demo/Fireworks.html)
 - [SchoolPride](https://code4fukui.github.io/confetti-es/demo/SchoolPride.html)
+- [LevelUp](https://code4fukui.github.io/confetti-es/demo/LevelUp.html) (from [chiritsumo](https://github.com/haruyuki-16278/chiritsumo))
 
 ## Usage
 
