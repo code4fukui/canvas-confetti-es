@@ -1,3 +1,4 @@
+const module = {};
 (function main(global, module, isWorker, workerSize) {
   var canUseWorker = !!(
     global.Worker &&
@@ -624,3 +625,5 @@
 
   return this || {};
 })(), module, false));
+const confetti = module.exports;
+export { confetti };
