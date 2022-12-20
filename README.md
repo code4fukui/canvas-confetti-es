@@ -1,39 +1,19 @@
-# [![Canvas Confetti](https://cdn.jsdelivr.net/gh/catdad-experiments/catdad-experiments-org@5ed78b/canvas-confetti/logo.jpg)](https://github.com/catdad/canvas-confetti/)
-
-[![github actions ci][ci.svg]][ci.link]
-[![jsdelivr][jsdelivr.svg]][jsdelivr.link]
-[![npm-downloads][npm-downloads.svg]][npm.link]
-[![npm-version][npm-version.svg]][npm.link]
-
-[ci.svg]: https://github.com/catdad/canvas-confetti/actions/workflows/ci.yml/badge.svg
-[ci.link]: https://github.com/catdad/canvas-confetti/actions/workflows/ci.yml?query=branch%3Amaster
-[jsdelivr.svg]: https://data.jsdelivr.com/v1/package/npm/canvas-confetti/badge?style=rounded
-[jsdelivr.link]: https://www.jsdelivr.com/package/npm/canvas-confetti
-[npm-downloads.svg]: https://img.shields.io/npm/dm/canvas-confetti.svg
-[npm.link]: https://www.npmjs.com/package/canvas-confetti
-[npm-version.svg]: https://img.shields.io/npm/v/canvas-confetti.svg
+# [![Canvas Confetti ES modules](https://cdn.jsdelivr.net/gh/catdad-experiments/catdad-experiments-org@5ed78b/canvas-confetti/logo.jpg)](https://github.com/code4fukui/canvas-confetti-es/)
 
 ## Demo
 
-[catdad.github.io/canvas-confetti](https://catdad.github.io/canvas-confetti/)
+- [BasicCannon](https://code4fukui.github.io/canvas-confetti-es/demo/BasecCannon.html)
+- [Fireworks](https://code4fukui.github.io/canvas-confetti-es/demo/Fireworks.html)
+- [SchoolPride](https://code4fukui.github.io/canvas-confetti-es/demo/SchoolPride.html)
 
-## Install
+## Usage
 
-You can install this module as a component from NPM:
+You can use as ES modules
 
-```bash
-npm install --save canvas-confetti
+```JavaScript
+import { confetti } from "https://code4fukui.github.io/confetti-es/confetti.js";
+confetti();
 ```
-
-You can then `require('canvas-confetti');` to use it in your project build. _Note: this is a client component, and will not run in Node. You will need to build your project with something like [webpack](https://github.com/webpack/webpack) in order to use this._
-
-You can also include this library in your HTML page directly from a CDN:
-
-```html
-<script src="https://cdn.jsdelivr.net/npm/canvas-confetti@1.5.1/dist/confetti.browser.min.js"></script>
-```
-
-_Note: you should use the latest version at the time that you include your project. You can see all versions [on the releases page](https://github.com/catdad/canvas-confetti/releases)._
 
 ## Reduced Motion
 
@@ -41,15 +21,12 @@ Thank you for joining me in this very important message about motion on your web
 
 ## API
 
-When installed from `npm`, this library can be required as a client component in your project build. When using the CDN version, it is exposed as a `confetti` function on `window`.
-
 ### `confetti([options {Object}])` → `Promise|null`
 
 `confetti` takes a single optional object. When `window.Promise` is available, it will return a Promise to let you know when it is done. When promises are not available (like in IE), it will return `null`. You can polyfill promises using any of the popular polyfills. You can also provide a promise implementation to `confetti` through:
 
 ```javascript
-const MyPromise = require('some-promise-lib');
-const confetti = require('canvas-confetti');
+import { confetti } from "https://code4fukui.github.io/confetti-es/confetti.js";
 confetti.Promise = MyPromise;
 ```
 
@@ -92,10 +69,10 @@ The following global options are available:
 _**Important: If you use `useWorker: true`, I own your canvas now. It's mine now and I can do whatever I want with it (don't worry... I'll just put confetti inside it, I promise). You must not try to use the canvas in any way (other than I guess removing it from the DOM), as it will throw an error. When using workers for rendering, control of the canvas must be transferred to the web worker, preventing any usage of that canvas on the main thread. If you must manipulate the canvas in any way, do not use this option.**_
 
 ```javascript
-var myCanvas = document.createElement('canvas');
+const myCanvas = document.createElement('canvas');
 document.body.appendChild(myCanvas);
 
-var myConfetti = confetti.create(myCanvas, {
+const myConfetti = confetti.create(myCanvas, {
   resize: true,
   useWorker: true
 });
@@ -120,10 +97,10 @@ setTimeout(() => {
 ```
 
 ```javascript
-var myCanvas = document.createElement('canvas');
+const myCanvas = document.createElement('canvas');
 document.body.appendChild(myCanvas);
 
-var myConfetti = confetti.create(myCanvas, { resize: true });
+const myConfetti = confetti.create(myCanvas, { resize: true });
 
 myConfetti();
 
@@ -175,8 +152,8 @@ I said creative... we can do better. Since it doesn't matter how many times we c
 
 ```javascript
 // do this for 30 seconds
-var duration = 30 * 1000;
-var end = Date.now() + duration;
+const duration = 30 * 1000;
+const end = Date.now() + duration;
 
 (function frame() {
   // launch a few confetti from the left edge
